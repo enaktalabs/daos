@@ -32,6 +32,7 @@ class DaosClient():
         """Trigger the instance cleanup process."""
         if cls._instance is None:
             return
+        cls._instance._close()
         cls._instance = None
 
     def __new__(cls):
